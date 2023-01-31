@@ -4,6 +4,8 @@ const router = express.Router();
 import { empresas } from '@libs/Empresas/Empresas';
 /*import { empresas, IEmpresas } from '@libs/Empresas/Empresas'; */
 
+/*Más información en Vid_30012023_SW_202301 */
+
 const empresasModel = new empresas();
 
 empresasModel.add({
