@@ -2,6 +2,7 @@ import express from 'express';
 const router = express.Router();
 
 import { empresas } from '@libs/Empresas/Empresas';
+/*import { empresas, IEmpresas } from '@libs/Empresas/Empresas'; */
 
 const empresasModel = new empresas();
 
