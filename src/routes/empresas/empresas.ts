@@ -77,6 +77,25 @@ router.put('/upd/:id',(req,res)=>{
     return res.status(404).json({"Error":"Error al actualizar empresa"});
 });
 
+router.delete('/del/:id', (req,res)=>{
+    const {id : codigo} = req.params; //Del objeto params (objeto json) se obtendrá id y se llamará codigo con dos puntos (:)
+    if(codigo){
+        if(empresasModel.delete(codigo)){
+            return res.status(200).json({"Deleted":true});
+        }
+    }
+    return res.status(404).json({"error":"No se pudo eliminar Empresa"});
+});
+
+router.get('/byid/:id',(req,res)=>{
+    const {id:codigo}=req.params;
+    const empresa = empresasModel.getById(codigo);
+    if(empresa){
+        return res.status(200).json(empresa);
+    }
+    return res.status(404).json({"error":"No se encontró la Empresa"});
+})
+
 
 /*router.get('/all', function(_req, res)=>{
     res.status(200).json{'msg':'Not Implemented yet'};
