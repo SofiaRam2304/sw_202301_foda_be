@@ -42,6 +42,13 @@ router.use('/empresas', empresasRouter);
 
 router.use('/usuarios', usuariosRouter);
 
+import fodaRouter from './FODA/Foda';
+router.use('/foda', fodaRouter);
+ //router.get  router.post router.put router.delete  router.use
+
+import usersRoute from './Users/Users';
+router.use('/Users', usersRoute);
+
 //router.get  router.post  router.put  router.delete  router.use
 
 export default router;
